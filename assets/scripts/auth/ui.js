@@ -2,6 +2,11 @@
 'use strict'
 
 const store = require('./../store')
+// const showNav = require('./../templates/navbar.handlebars')
+// const showChangePassword = require('./../templates/change-password.handlebars')
+// const showSignInForm = require('./../templates/sign-in.handlebars')
+
+// const frontPage = showSignInForm()
 
 const signUpSuccess = (data) => {
   $('.status-message').text('Sucessfully signed up')
@@ -12,6 +17,8 @@ const signUpSuccess = (data) => {
 const signInSuccess = data => {
   store.user = data.user
   $('.status-message').text('Successfuly signed in')
+  $('.main-content').html('')
+  // $('nav').html(showNav())
 
   $('form').trigger('reset')
 }
