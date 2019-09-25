@@ -36,7 +36,7 @@ const changePasswordSuccess = data => {
 const signOutSuccess = () => {
   $('.main-content').html(frontPage)
   $('nav').html('')
-  $('#message').text('Successfully signed out')
+  $('.status-message').text('Successfully signed out')
   store.user = null
 }
 
