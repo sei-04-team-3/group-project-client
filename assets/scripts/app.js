@@ -7,8 +7,10 @@
 // require('./example')
 const signInFormTemplate = require('./templates/sign-in.handlebars')
 const authEvents = require('./auth/events')
+const frontPage = require('./templates/sign-in.handlebars')()
 
 $(() => {
+  $('.main-content').html(frontPage)
   authEvents.addAuthHandlers()
   $('.main-content').html(signInFormTemplate())
 })
