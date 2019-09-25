@@ -23,22 +23,22 @@ const signInSuccess = data => {
   $('form').trigger('reset')
 }
 
-// const goChangePassword = () => {
-//   $('.main-content').html(showChangePassword())
-// }
-//
-// const changePasswordSuccess = data => {
-//   $('.status-message').text('Successfully changed password')
-//
-//   $('form').trigger('reset')
-// }
+const goChangePassword = () => {
+  $('.main-content').html(showChangePassword())
+}
 
-// const signOutSuccess = () => {
-//   $('.main-content').html(frontPage)
-//   $('nav').html('')
-//   $('#message').text('Successfully signed out')
-//   store.user = null
-// }
+const changePasswordSuccess = data => {
+  $('.status-message').text('Successfully changed password')
+
+  $('form').trigger('reset')
+}
+
+const signOutSuccess = () => {
+  $('.main-content').html(frontPage)
+  $('nav').html('')
+  $('#message').text('Successfully signed out')
+  store.user = null
+}
 
 const failure = data => {
   $('.status-message').text('There was a problem signing up/in')
@@ -49,5 +49,8 @@ const failure = data => {
 module.exports = {
   signUpSuccess,
   signInSuccess,
+  changePasswordSuccess,
+  goChangePassword,
+  signOutSuccess,
   failure
 }
