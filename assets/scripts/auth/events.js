@@ -37,10 +37,10 @@ const onSignOut = function (event) {
 }
 
 const addAuthHandlers = function () {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('.main-content').on('submit', '.sign-up', onSignUp)
+  $('.main-content').on('submit', '.sign-in', onSignIn)
+  $('.main-content').on('submit', '.change-password', onChangePassword)
+  $('.main-content').on('submit', '.sign-out', onSignOut)
 }
 
 module.exports = {
