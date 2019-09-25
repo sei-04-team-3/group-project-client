@@ -6,7 +6,9 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const signInFormTemplate = require('./templates/sign-in.handlebars')
+const authEvents = require('./auth/events')
 
 $(() => {
+  authEvents.addAuthHandlers()
   $('.main-content').html(signInFormTemplate())
 })
