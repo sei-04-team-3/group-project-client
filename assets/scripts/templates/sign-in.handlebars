@@ -1,19 +1,24 @@
-<form class='sign-up' class='border'>
-  <fieldset>
-    <legend>Sign up</legend>
-    <div>(do not use real password and email, this is NOT secure!!!)</div>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="password" name="credentials[password_confirmation]" placeholder = "Confirm Password">
-    <input type="submit" value ="Sign up">
-  </fieldset>
-</form>
-
-<form class='sign-in' class='border'>
-  <fieldset>
-    <legend>Sign in</legend>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="submit" value ="Sign in">
-  </fieldset>
-</form>
+<div>(do not use real password and email, this is NOT secure!!!)</div>
+<div class="row">
+  <div class="col-4">
+    <form class='sign-up form-group border'>
+      <fieldset>
+        <legend>Sign up</legend>
+        <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+        <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder = "Confirm Password">
+        <input type="submit" value ="Sign up">
+      </fieldset>
+    </form>
+  </div>
+  <div class="col04">
+    <form class='sign-in form-group border'>
+      <fieldset>
+        <legend>Sign in</legend>
+        <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+        <input type="submit" value ="Sign in">
+      </fieldset>
+    </form>
+  </div>
+</div>
