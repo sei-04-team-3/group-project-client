@@ -2,6 +2,7 @@
 
 const ui = require('./ui')
 const api = require('./api')
+const getFormFields = require('./../../../lib/get-form-fields')
 
 const onShowChat = event => {
   event.preventDefault()
@@ -16,12 +17,22 @@ const onGetMessages = function (event) {
     .catch(ui.onIndexFailure)
 }
 
+const onCreateMessage = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.create(data)
+    .then(ui.onCreateSuccess)
+    .catch(ui.onCreateFailure)
+}
+
 const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
+  $('.main-content').on('submit', '.post-message', onCreateMessage)
 }
 
 module.exports = {
   onShowChat,
   addHandlers,
+  onCreateMessage,
   onGetMessages
 }
