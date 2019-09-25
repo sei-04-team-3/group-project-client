@@ -1,1 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+
+html {
+  padding: 5px 10px;
+}
+
+.chatbox {
+  height: 200px;
+  padding: 5px;
+  width: 100vw;
+}
