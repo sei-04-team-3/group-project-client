@@ -1,11 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+$lightblue: #91c2d9;
+$silver: #d5d5d5;
+$bg-color: $lightblue;
 
-html {
+
+* {
   padding: 5px 10px;
 }
 
 .chatbox {
-  height: 50%;
+  height: 50vh;
   margin: 5px;
   padding: 5px;
   width: 80vw;
