@@ -20,6 +20,11 @@ const onSignIn = function (event) {
     .catch(ui.failure)
 }
 
+const onGoChangePassword = function (event) {
+  event.preventDefault()
+  ui.goChangePassword()
+}
+
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -40,13 +45,15 @@ const addAuthHandlers = function () {
   $('.main-content').on('submit', '.sign-up', onSignUp)
   $('.main-content').on('submit', '.sign-in', onSignIn)
   $('.main-content').on('submit', '.change-password', onChangePassword)
-  $('.main-content').on('submit', '.sign-out', onSignOut)
+  $('nav').on('submit', '.sign-out', onSignOut)
+  $('nav').on('submit', '.show-change-password', onGoChangePassword)
 }
 
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
+  onGoChangePassword,
   onChangePassword,
   addAuthHandlers
 }
