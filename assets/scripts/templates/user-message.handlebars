@@ -1,6 +1,6 @@
 {{#each messages as |message|}}
   <div class="row">
-    <div class="col-sm-8 col-md-9">
+    <div class="col-sm-8 col-md-9 col-xl-10">
       <div class="card">
         <div class="card-header" data-id="{{message._id}}">
           <div class="username col-md-6">{{message.owner.email}}</div>
@@ -11,11 +11,11 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 col-md-3">
+    <div class="col-sm-4 col-md-3 col-xl-2">
       <!-- This is the modal button -->
-      <button class="edit-btn btn btn-block btn-warning" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+      <button class="edit-btn btn btn-sm btn-warning" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
       <!-- End modal button -->
-      <button class="delete-btn btn btn-block btn-danger" data-id="{{message._id}}">Delete</button>
+      <button class="delete-btn btn btn-sm btn-danger" data-id="{{message._id}}">Delete</button>
     </div>
   </div>
   <!-- End card -->

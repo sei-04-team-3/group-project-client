@@ -4,21 +4,28 @@ $offwhite: 	#fdfaf8;
 $bg-color: $lightblue;
 
 
-* {
+html {
   padding: 5px 10px;
-}
-
-ul {
-  width: 100%;
 }
 
 .card-header {
   display: flex;
+  padding: 0;
+}
+
+.card-body,
+.card-text {
+  padding: 2px 5px;
 }
 
 .chatbox {
   height: 50vh;
-  margin: 5px 0px;
+  margin: 5px 0;
   padding: 5px;
   width: 90vw;
+}
+
+nav {
+  display: flex;
+  width: 100%;
 }
