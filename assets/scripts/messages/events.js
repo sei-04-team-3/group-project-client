@@ -4,14 +4,16 @@ const ui = require('./ui')
 const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 const store = require('../store')
+const chatScroller = require('../../../lib/chat-scroller.js')
 
 const { apiUrl } = require('../config')
 const socket = require('socket.io-client')(apiUrl)
 
 const onShowChat = event => {
   event.preventDefault()
-  onGetMessages(event)
+  store.loadingChat = true
   ui.goShowChat()
+  onGetMessages(event)
 }
 
 const onGetMessages = function (event) {
@@ -51,6 +53,7 @@ const onUpdateMessage = function (event) {
 
 const socketGetMessages = function () {
   if (store.user) {
+    chatScroller.checkForScroll()
     api.index()
       .then(ui.onIndexSuccess)
       .catch(ui.onIndexFailure)

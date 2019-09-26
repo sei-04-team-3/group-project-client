@@ -5,14 +5,18 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-// const signInFormTemplate = require('./templates/sign-in.handlebars')
+
 const authEvents = require('./auth/events')
 const messageEvents = require('./messages/events')
 const frontPage = require('./templates/sign-in.handlebars')
+const store = require('./store.js')
 
 $(() => {
   $('.main-content').html(frontPage)
   authEvents.addAuthHandlers()
   messageEvents.addHandlers()
-  // $('.main-content').html(signInFormTemplate())
+
+  // These are for the chat scroller. Dont' want errors where I check them and they don't exist
+  store.loadingChat = false
+  store.shouldIScroll = false
 })
