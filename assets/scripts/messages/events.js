@@ -34,8 +34,6 @@ const onDestroyMessage = event => {
   const id = event.target.getAttribute('data-id')
   api.destroy(id)
     .then(ui.onDestroySuccess)
-    .then(api.index)
-    .then(ui.onIndexSuccess)
     .catch(ui.onDestroyFailure)
 }
 
@@ -48,8 +46,6 @@ const onUpdateMessage = function (event) {
   const data = getFormFields(event.target)
   api.update(data)
     .then(ui.updateMessageSuccess)
-    .then(api.index)
-    .then(ui.onIndexSuccess)
     .catch(ui.updateMessageFailure)
 }
 
