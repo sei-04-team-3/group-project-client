@@ -50,6 +50,7 @@ const onUpdateMessage = function (event) {
   api.update(data)
     .then(ui.updateMessageSuccess)
     .then(api.index)
+    .then(ui.onIndexSuccess)
     .catch(ui.updateMessageFailure)
 }
 

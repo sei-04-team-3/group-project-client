@@ -49,7 +49,6 @@ const updateMessageFailure = function () {
   $('form').trigger('reset')
 }
 
-
 const onDestroySuccess = () => {
   $('.status-message').text('Successfully deleted message')
 
