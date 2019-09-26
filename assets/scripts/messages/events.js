@@ -26,8 +26,6 @@ const onCreateMessage = event => {
   const data = getFormFields(event.target)
   api.create(data)
     .then(ui.onCreateSuccess)
-    .then(api.index)
-    .then(ui.onIndexSuccess)
     .catch(ui.onCreateFailure)
 }
 
@@ -56,9 +54,11 @@ const onUpdateMessage = function (event) {
 }
 
 const socketGetMessages = function () {
-  api.index()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
+  if (store.user) {
+    api.index()
+      .then(ui.onIndexSuccess)
+      .catch(ui.onIndexFailure)
+  }
 }
 
 const addHandlers = () => {
