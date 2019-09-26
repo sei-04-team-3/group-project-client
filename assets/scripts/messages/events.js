@@ -5,6 +5,9 @@ const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 const store = require('../store')
 
+const { apiUrl } = require('../config')
+const socket = require('socket.io-client')(apiUrl)
+
 const onShowChat = event => {
   event.preventDefault()
   onGetMessages(event)
@@ -55,12 +58,22 @@ const onUpdateMessage = function (event) {
     // .catch(ui.onUpdateFailure())
 }
 
+const socketGetMessages = function () {
+  api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onIndexFailure)
+}
+
 const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
   $('.main-content').on('submit', '.post-message', onCreateMessage)
   $('.main-content').on('click', '.delete-btn', onDestroyMessage)
   $('.main-content').on('submit', '.modal-body', onUpdateMessage)
   $('.main-content').on('click', '.edit-btn', onStoreMessageID)
+
+  socket.on('message emit', socketGetMessages)
+  socket.on('connection', socketGetMessages)
+
 }
 
 module.exports = {
