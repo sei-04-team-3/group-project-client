@@ -1,7 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+$darkblue: #326983;
+$eggplant: 	#324183;
 $lightblue: #91c2d9;
 $offwhite: 	#fdfaf8;
-$bg-color: $lightblue;
+$bg-color: $darkblue;
+$message-bg: $eggplant;
+
+h1 {
+  color: white;
+}
 
 html {
   bottom: 5px;
@@ -9,8 +16,13 @@ html {
   padding: 5px 10px;
 }
 
+legend {
+  margin: 0;
+}
+
 nav {
   display: flex;
+  margin-left: 2vw;
   width: 100%;
 }
 
@@ -25,10 +37,15 @@ nav {
 }
 
 .chatbox {
+  background: $message-bg;
   height: 60vh;
-  margin: 5px 2px;
+  margin: 0 auto;
   padding: 5px;
   width: 90vw;
+}
+
+.handle-btn {
+  margin: 0 auto;
 }
 
 .row {
@@ -36,8 +53,25 @@ nav {
   padding: 0;
 }
 
+.sign-in, .sign-up {
+  background: $message-bg;
+}
+
+.status-message {
+  color: white;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.theme {
+  background: $bg-color;
+}
+
 .user-message-box {
+  color: white;
   height: 10vh;
+  margin-left: 4vw;
+  padding: 0;
   position: absolute;
-  width: 100vw;
+  width: 90vw;
 }
