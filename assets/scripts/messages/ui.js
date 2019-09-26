@@ -10,7 +10,6 @@ const goShowChat = () => {
 }
 
 const onIndexSuccess = (data) => {
-  console.log(data)
   const showMessages = getMessageTemplate({ messages: data.messages })
   $('.main-content').find('.chatbox').html(showMessages)
   chatScroller.initialScroll()
