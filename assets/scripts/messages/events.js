@@ -31,8 +31,8 @@ const onDestroyMessage = event => {
   const id = event.target.getAttribute('data-id')
   console.log('this is the id ' + id)
   api.destroy(id)
-    .then(console.log)
-    .catch(console.error)
+    .then(ui.onDestroySuccess)
+    .catch(ui.onDestroyFailure)
 }
 
 const addHandlers = () => {

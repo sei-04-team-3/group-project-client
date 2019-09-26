@@ -14,17 +14,27 @@ const onIndexSuccess = (data) => {
   const showMessages = getMessageTemplate({ messages: data.messages })
   $('.main-content').find('.chatbox').html(showMessages)
   chatScroller.initialScroll()
+  $('.status-message').text('Successfully retrieved messages')
+}
+const onIndexFailure = () => {
+  $('.status-message').text('Failed to get messages')
 }
 
 const onCreateSuccess = data => {
+  $('.status-message').text('Sucessfully created message')
   $('.chatbox').append(showMessages({ messages: data.messages }))
 }
 
 const onCreateFailure = () => {
-
+  $('.status-message').text('Failed to create message')
 }
-const onIndexFailure = () => {
 
+const onDestroySuccess = () => {
+  $('.status-message').text('Successfully deleted message')
+}
+
+const onDestroyFailure = () => {
+  $('.status-message').text('Message is not owned by user; cannot delete')
 }
 
 module.exports = {
@@ -32,5 +42,7 @@ module.exports = {
   onCreateSuccess,
   onCreateFailure,
   onIndexSuccess,
-  onIndexFailure
+  onIndexFailure,
+  onDestroySuccess,
+  onDestroyFailure
 }
