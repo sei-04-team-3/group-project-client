@@ -23,6 +23,8 @@ const onCreateMessage = event => {
   const data = getFormFields(event.target)
   api.create(data)
     .then(ui.onCreateSuccess)
+    .then(api.index)
+    .then(ui.onIndexSuccess)
     .catch(ui.onCreateFailure)
 }
 
