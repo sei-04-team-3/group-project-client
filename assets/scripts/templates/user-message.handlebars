@@ -1,14 +1,19 @@
 {{#each messages as |message|}}
-  <div class="card">
-    <div class="row card-header" data-id="{{message._id}}">
-      <div class="username col-md-8">{{message.owner.email}}</div><div class="date col-md-4">{{message.timestamps}}</div>
+  <div class="row border rounded">
+    <div class="col-sm-8 col-md-9">
+      <div class="card">
+        <div class="card-header" data-id="{{message._id}}">
+          <div class="username col-md-8">{{message.owner.email}}</div>
+          <div class="date col-md-4">{{message.timestamps}}</div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{message.text}}</p>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="card-text">{{message.text}}</p>
-    </div>
-    <div class="card-footer text-muted">
-      <button class="delete-btn btn btn-danger" data-id="{{message._id}}">Delete</button>
-      <button class="edit-btn btn btn-warning" data-id="{{message._id}}">Change</button>
+    <div class="col-sm-4 col-md-3">
+      <button class="edit-btn btn btn-block btn-warning" data-id="{{message._id}}">Change</button>
+      <button class="delete-btn btn btn-block btn-danger" data-id="{{message._id}}">Delete</button>
     </div>
   </div>
 {{/each}}
