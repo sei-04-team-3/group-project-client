@@ -8,9 +8,17 @@ $bg-color: $lightblue;
   padding: 5px 10px;
 }
 
+ul {
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+}
+
 .chatbox {
   height: 50vh;
-  margin: 5px;
+  margin: 5px 0px;
   padding: 5px;
   width: 90vw;
 }

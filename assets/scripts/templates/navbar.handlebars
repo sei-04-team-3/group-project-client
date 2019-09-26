@@ -1,25 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-4">
-      <form class="show-chat form-group">
-        <fieldset>
-          <input type='submit' class="btn btn-block btn-info" value='Show Chat'>
-        </fieldset>
-      </form>
-    </div>
-    <div class="col-sm-12 col-md-4">
-      <form class="show-change-password form-group">
-        <fieldset>
+<button class="navbar-toggler btn-block bg-light border rounded" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="navbar-collapse collapse" id="collapsingNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link">
+        <form class="show-chat form-group">
+          <input type='submit' class="show-chat btn btn-block btn-info" value='Show Chat'>
+        </form>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <form class="show-change-password form-group">
           <input type='submit' class="btn btn-block btn-warning" value='Change Password'>
-        </fieldset>
-      </form>
-    </div>
-    <div class="col-sm-12 col-md-4">
-      <form class="sign-out">
-        <fieldset>
+        </form>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <form class="sign-out">
           <input type='submit' class="btn btn-block btn-danger" value='Sign out'>
-        </fieldset>
-      </form>
-    </div>
-  </div>
+        </form>
+      </a>
+    </li>
+  </ul>
 </div>
