@@ -3,9 +3,15 @@ $lightblue: #91c2d9;
 $offwhite: 	#fdfaf8;
 $bg-color: $lightblue;
 
-
 html {
+  bottom: 5px;
+  margin: 0;
   padding: 5px 10px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
 }
 
 .card-header {
@@ -19,13 +25,14 @@ html {
 }
 
 .chatbox {
-  height: 50vh;
-  margin: 5px 0;
+  height: 60vh;
+  margin: 5px 2px;
   padding: 5px;
   width: 90vw;
 }
 
-nav {
-  display: flex;
-  width: 100%;
+.user-message-box {
+  height: 10vh;
+  position: absolute;
+  width: 100vw;
 }
