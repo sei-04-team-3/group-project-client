@@ -3,6 +3,7 @@
 const ui = require('./ui')
 const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('../store')
 
 const onShowChat = event => {
   event.preventDefault()
@@ -35,10 +36,29 @@ const onDestroyMessage = event => {
     .catch(ui.onDestroyFailure)
 }
 
+const onStoreMessageID = function (event) {
+  store.messageid = event.target.getAttribute('data-id')
+}
+
+const onUpdateMessage = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.update(data)
+    .then(console.log)
+    .catch(console.error)
+    // .then(function (formData) {
+    //   ui.onUpdateSuccess()
+    // })
+    // .catch(ui.onUpdateFailure())
+}
+
 const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
   $('.main-content').on('submit', '.post-message', onCreateMessage)
   $('.main-content').on('click', '.delete-btn', onDestroyMessage)
+  $('.main-content').on('submit', '.modal-body', onUpdateMessage)
+  $('.main-content').on('click', '.edit-btn', onStoreMessageID)
 }
 
 module.exports = {
@@ -46,5 +66,6 @@ module.exports = {
   addHandlers,
   onCreateMessage,
   onGetMessages,
-  onDestroyMessage
+  onDestroyMessage,
+  onUpdateMessage
 }

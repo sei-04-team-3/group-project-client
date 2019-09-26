@@ -46,7 +46,7 @@ const create = formData => {
 
 const update = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/messages/' + formData.profile.id,
+    url: config.apiUrl + '/messages/' + store.messageid,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
