@@ -36,6 +36,8 @@ const onDestroyMessage = event => {
   const id = event.target.getAttribute('data-id')
   api.destroy(id)
     .then(ui.onDestroySuccess)
+    .then(api.index)
+    .then(ui.onIndexSuccess)
     .catch(ui.onDestroyFailure)
 }
 
