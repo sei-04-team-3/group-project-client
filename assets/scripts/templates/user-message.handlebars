@@ -1,10 +1,11 @@
 {{#each messages as |message|}}
+{{ log message }}
   <div class="row border rounded">
     <div class="col-sm-8 col-md-9">
       <div class="card">
         <div class="card-header" data-id="{{message._id}}">
           <div class="username col-md-8">{{message.owner.email}}</div>
-          <div class="date col-md-4">{{message.timestamps}}</div>
+          <div class="date col-md-4">{{pretty-timestamps message.createdAt}}</div>
         </div>
         <div class="card-body">
           <p class="card-text">{{message.text}}</p>
