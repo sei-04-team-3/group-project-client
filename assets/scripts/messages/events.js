@@ -33,9 +33,7 @@ const onCreateMessage = event => {
 
 const onDestroyMessage = event => {
   event.preventDefault()
-  // const id = $(event.target).closest('.delete-btn').data('id')
   const id = event.target.getAttribute('data-id')
-  console.log('this is the id ' + id)
   api.destroy(id)
     .then(ui.onDestroySuccess)
     .catch(ui.onDestroyFailure)
@@ -50,12 +48,9 @@ const onUpdateMessage = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.update(data)
-    .then(console.log)
-    .catch(console.error)
-    // .then(function (formData) {
-    //   ui.onUpdateSuccess()
-    // })
-    // .catch(ui.onUpdateFailure())
+    .then(ui.updateMessageSuccess)
+    .then(api.index)
+    .catch(ui.updateMessageFailure)
 }
 
 const socketGetMessages = function () {
@@ -68,12 +63,11 @@ const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
   $('.main-content').on('submit', '.post-message', onCreateMessage)
   $('.main-content').on('click', '.delete-btn', onDestroyMessage)
-  $('.main-content').on('submit', '.modal-body', onUpdateMessage)
+  $('.update-message').on('submit', onUpdateMessage)
   $('.main-content').on('click', '.edit-btn', onStoreMessageID)
 
   socket.on('message emit', socketGetMessages)
   socket.on('connection', socketGetMessages)
-
 }
 
 module.exports = {

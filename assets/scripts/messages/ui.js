@@ -15,26 +15,51 @@ const onIndexSuccess = (data) => {
   $('.main-content').find('.chatbox').html(showMessages)
   chatScroller.initialScroll()
   $('.status-message').text('Successfully retrieved messages')
+
+  $('form').trigger('reset')
 }
 const onIndexFailure = () => {
   $('.status-message').text('Failed to get messages')
+
+  $('form').trigger('reset')
 }
 
 const onCreateSuccess = data => {
   $('.status-message').text('Sucessfully created message')
   $('.chatbox').append(showMessages({ messages: data.messages }))
+
+  $('form').trigger('reset')
 }
 
 const onCreateFailure = () => {
   $('.status-message').text('Failed to create message')
+
+  $('form').trigger('reset')
 }
+
+const updateMessageSuccess = function () {
+  $('.status-message').text('Message updated')
+
+  $('form').trigger('reset')
+}
+
+const updateMessageFailure = function () {
+  $('.status-message').text('Failed to update message')
+
+  $('form').trigger('reset')
+}
+
 
 const onDestroySuccess = () => {
   $('.status-message').text('Successfully deleted message')
+
+  $('form').trigger('reset')
 }
 
 const onDestroyFailure = () => {
   $('.status-message').text('Message is not owned by user; cannot delete')
+
+  $('form').trigger('reset')
 }
 
 module.exports = {
@@ -43,6 +68,8 @@ module.exports = {
   onCreateFailure,
   onIndexSuccess,
   onIndexFailure,
+  updateMessageSuccess,
+  updateMessageFailure,
   onDestroySuccess,
   onDestroyFailure
 }
