@@ -25,14 +25,26 @@ const onCreateMessage = event => {
     .catch(ui.onCreateFailure)
 }
 
+const onDestroyMessage = event => {
+  event.preventDefault()
+  // const id = $(event.target).closest('.delete-btn').data('id')
+  const id = event.target.getAttribute('data-id')
+  console.log('this is the id ' + id)
+  api.destroy(id)
+    .then(console.log)
+    .catch(console.error)
+}
+
 const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
   $('.main-content').on('submit', '.post-message', onCreateMessage)
+  $('.main-content').on('click', '.delete-btn', onDestroyMessage)
 }
 
 module.exports = {
   onShowChat,
   addHandlers,
   onCreateMessage,
-  onGetMessages
+  onGetMessages,
+  onDestroyMessage
 }
