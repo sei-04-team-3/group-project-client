@@ -13,7 +13,6 @@ const onIndexSuccess = (data) => {
   const showMessages = getMessageTemplate({ messages: data.messages })
   $('.main-content').find('.chatbox').html(showMessages)
   chatScroller.initialScroll()
-  $('.status-message').text('Successfully retrieved messages')
 
   $('form').trigger('reset')
 }
