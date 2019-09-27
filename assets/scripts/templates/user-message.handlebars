@@ -2,9 +2,11 @@
   <div class="row">
     <div class="col-sm-8 col-md-9 col-xl-10">
       <div class="card">
-        <div class="card-header" data-id="{{message._id}}">
-          <div class="username col-md-6">{{message.owner.email}}</div>
-          <div class="date col-md-6 text-right">{{pretty-timestamps message}}</div>
+        <div class="card-header col" data-id="{{message._id}}">
+          <div class="row">
+            <div class="username col-sm-12 col-md-4">{{message.owner.email}}</div>
+            <div class="date col-sm-12 col-md-8">{{pretty-timestamps message}}</div>
+          </div>
         </div>
         <div class="card-body">
           <p class="card-text">{{message.text}}</p>
@@ -13,9 +15,9 @@
     </div>
     <div class="col-sm-4 col-md-3 col-xl-2 handle-btn">
       <!-- This is the modal button -->
-      <button class="edit-btn btn btn-sm btn-outline-warning sticky-top" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+      <button class="edit-btn btn btn-sm btn-outline-warning btn-block sticky-top" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
       <!-- End modal button -->
-      <button class="delete-btn btn btn-sm btn-outline-danger sticky-top" data-id="{{message._id}}">Delete</button>
+      <button class="delete-btn btn btn-sm btn-outline-danger btn-block sticky-top" data-id="{{message._id}}">Delete</button>
     </div>
   </div>
   <!-- End card -->

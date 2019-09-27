@@ -1,18 +1,22 @@
-<div class="row">
-  <div class="overflow-auto chatbox rounded" id='chatbox'>
+<div class="container">
+  <div class="row">
+    <div class="overflow-auto col-md-9 col-lg-10 chatbox rounded" id='chatbox'>
 
-  </div>
-
-  </br>
-
-  {{> user-display }}
-</div>
-<div class="container user-message-box">
-  <form class="post-message">
-    <label for="chat-message">Type your message</label>
-    <div class="input-group">
-      <textarea name="message[text]" class="form-control" id="chat-message" rows="3" placeholder="BLAHH BLAH BLAH BLAH BLAH"></textarea>
-      <input type="submit" value="Submit" class="submit btn btn-primary">
     </div>
-  </form>
+
+    </br>
+
+    {{> user-display }}
+  </div>
+  <div class="row user-message-box">
+    <div class="col-12">
+      <form class="post-message form-group">
+        <label for="chat-message">Type your message</label>
+        <div class="input-group">
+          <textarea name="message[text]" class="form-control" id="chat-message" rows="3" placeholder="BLAHH BLAH BLAH BLAH BLAH"></textarea>
+          <input type="submit" value="Submit" class="submit btn btn-primary">
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

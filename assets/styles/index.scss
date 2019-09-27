@@ -37,7 +37,7 @@ nav {
 }
 
 .btn-outline-danger {
-  background-color: rgba(128,32,41,.5);
+  background-color: rgba(128, 32, 41, .5);
   border-color: $danger-outline;
   color: $delete-color;
 }
@@ -49,13 +49,12 @@ nav {
 }
 
 .btn-outline-warning {
-  background-color: rgba(128,104,32,.35);
+  background-color: rgba(128, 104, 32, .35);
   border-color: $update-outline;
   color: $update-color;
 }
 
 .card-header {
-  display: flex;
   padding: 0;
 }
 
@@ -74,9 +73,11 @@ nav {
 .chatbox {
   background: $message-bg;
   height: 60vh;
-  margin: 0 auto;
-  padding: 5px;
-  width: 80vw;
+  padding: 2px;
+}
+
+.date {
+  text-align: right;
 }
 
 .handle-btn {
@@ -113,11 +114,24 @@ nav {
 }
 
 .user-message-box {
+  bottom: 0;
   color: white;
   height: 10vh;
   justify-content: center;
-  margin-left: 9vw;
+  margin: 0;
+  margin-left: -1.5vw;
   padding: 0;
-  position: absolute;
-  width: 80vw;
+  width: 100%;
+}
+
+.usernames {
+  background: $message-bg;
+  background-color: rgba(50, 131, 117, .75);
+  padding: 2px;
+}
+
+@media (max-width: 756px) {
+  .date {
+    text-align: justify;
+  }
 }
