@@ -29,37 +29,50 @@ const onCreateSuccess = data => {
   chatScroller.checkForScroll()
   $('.status-message').text('Sucessfully created message')
   $('.chatbox').append(showMessages({ messages: data.messages }))
-
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
 const onCreateFailure = () => {
   $('.status-message').text('Failed to create message')
-
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
 const updateMessageSuccess = function () {
   $('.status-message').text('Message updated')
-
+  $('#exampleModalCenter').modal('toggle')
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
 const updateMessageFailure = function () {
   $('.status-message').text('Failed to update message')
-
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
 const onDestroySuccess = () => {
   $('.status-message').text('Successfully deleted message')
-
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
 const onDestroyFailure = () => {
   $('.status-message').text('Message is not owned by user; cannot delete')
-
+  setTimeout(() => {
+    $('.status-message').text('')
+  }, 3500)
   $('form').trigger('reset')
 }
 
