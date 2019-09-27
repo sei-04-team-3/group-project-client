@@ -46,11 +46,23 @@ const failure = data => {
   $('form').trigger('reset')
 }
 
+const indexUsersFailure = () => {
+  $('.status-message').text('Trouble getting user list')
+}
+
+const changePasswordFailure = () => {
+  $('.status-message').text('There was a problem changing password')
+
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
   goChangePassword,
   signOutSuccess,
-  failure
+  failure,
+  indexUsersFailure,
+  changePasswordFailure
 }

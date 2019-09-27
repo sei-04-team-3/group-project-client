@@ -22,6 +22,12 @@ const onSignIn = function (event) {
     .catch(ui.failure)
 }
 
+const onIndexUsers = function () {
+  api.indexUsers()
+    .then(console.log)
+    .catch(ui.indexUsersFailure)
+}
+
 const onGoChangePassword = function (event) {
   event.preventDefault()
   ui.goChangePassword()
@@ -32,7 +38,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .catch(ui.failure)
+    .catch(ui.changePasswordFailure)
 }
 
 const onSignOut = function (event) {
@@ -52,6 +58,7 @@ const addAuthHandlers = function () {
 }
 
 module.exports = {
+  onIndexUsers,
   onSignUp,
   onSignIn,
   onSignOut,

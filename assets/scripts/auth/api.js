@@ -3,6 +3,13 @@
 const config = require('../config')
 const store = require('../store')
 
+const indexUsers = function () {
+  return $.ajax({
+    url: config.apiUrl + '/users',
+    method: 'GET'
+  })
+}
+
 const signUp = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -41,6 +48,7 @@ const signOut = function (data) {
 }
 
 module.exports = {
+  indexUsers,
   signUp,
   signIn,
   changePassword,

@@ -6,6 +6,8 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const store = require('../store')
 const chatScroller = require('../../../lib/chat-scroller.js')
 
+const authApi = require('./../auth/api')
+
 const { apiUrl } = require('../config')
 const socket = require('socket.io-client')(apiUrl)
 
@@ -19,6 +21,8 @@ const onShowChat = event => {
 const onGetMessages = function () {
   api.index()
     .then(ui.onIndexSuccess)
+    .then(authApi.indexUsers)
+    .then(console.log)
     .catch(ui.onIndexFailure)
 }
 
