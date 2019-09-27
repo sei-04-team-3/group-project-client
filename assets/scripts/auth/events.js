@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const messageEvents = require('./../messages/events')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -17,6 +18,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(messageEvents.onShowChat)
     .catch(ui.failure)
 }
 

@@ -10,14 +10,13 @@ const { apiUrl } = require('../config')
 const socket = require('socket.io-client')(apiUrl)
 
 const onShowChat = event => {
-  event.preventDefault()
+  if (event) event.preventDefault()
   store.loadingChat = true
   ui.goShowChat()
-  onGetMessages(event)
+  onGetMessages()
 }
 
-const onGetMessages = function (event) {
-  event.preventDefault()
+const onGetMessages = function () {
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
