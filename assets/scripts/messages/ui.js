@@ -2,6 +2,7 @@
 
 const showChat = require('./../templates/chatbox.handlebars')
 const getMessageTemplate = require('./../templates/user-message.handlebars')
+const showUsers = require('./../templates/user-name.handlebars')
 const showMessages = require('./../templates/user-message.handlebars')
 const chatScroller = require('../../../lib/chat-scroller.js')
 
@@ -10,11 +11,15 @@ const goShowChat = () => {
 }
 
 const onIndexSuccess = (data) => {
-  const showMessages = getMessageTemplate({ messages: data.messages })
+  const showMessages = getMessageTemplate({ messages: data.messages, users: data.users })
   $('.main-content').find('#chatbox').html(showMessages)
 
   chatScroller.checkForScroll()
   chatScroller.scroll()
+}
+
+const onUserIndexSuccess = (data) => {
+  $('.main-content').find('#usernames').html(showUsers({ users: data.users }))
 }
 const onIndexFailure = () => {
   $('.status-message').text('Failed to get messages')
@@ -67,5 +72,6 @@ module.exports = {
   updateMessageSuccess,
   updateMessageFailure,
   onDestroySuccess,
-  onDestroyFailure
+  onDestroyFailure,
+  onUserIndexSuccess
 }

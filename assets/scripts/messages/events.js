@@ -22,7 +22,7 @@ const onGetMessages = function () {
   api.index()
     .then(ui.onIndexSuccess)
     .then(authApi.indexUsers)
-    .then(console.log)
+    .then(ui.onUserIndexSuccess)
     .catch(ui.onIndexFailure)
 }
 
