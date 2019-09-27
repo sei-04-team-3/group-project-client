@@ -24,7 +24,6 @@ const onSignIn = function (event) {
 
 const onIndexUsers = function () {
   api.indexUsers()
-    .then(console.log)
     .catch(ui.indexUsersFailure)
 }
 
