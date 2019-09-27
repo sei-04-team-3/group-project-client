@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header" data-id="{{message._id}}">
           <div class="username col-md-6">{{message.owner.email}}</div>
-          <div class="date col-md-6 text-right">{{pretty-timestamps message}}</div>
+          <div class="date col-md-6 text-right">{{pretty-timestamps message.createdAt}}</div>
         </div>
         <div class="card-body">
           <p class="card-text">{{message.text}}</p>
