@@ -3,11 +3,13 @@ Repos & Deployed Sites:
 Front-End:
 
 Repo: https://github.com/sei-04-team-3/group-project-client
+Deployed Site: https://sei-04-team-3.github.io/group-project-client/
 
 
 Back-End:
 
 Repo: https://github.com/sei-04-team-3/group-project-api
+Deployed: 'https://floating-lowlands-13889.herokuapp.com'
 
 This application is an instant messaging platform. After the user signs up and signs in, they are provided with a chatbox where they can see the history of the chat and participate in the conversation live. They can update and delete their own messages, create new ones, see all messages, and instantly receive messages from other clients.
 
