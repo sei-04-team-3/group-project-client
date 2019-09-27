@@ -19,11 +19,13 @@
 
       <!-- This is the modal button -->
       {{#if (auth-check-update message.owner)}}
-      {{>update-button}}
+      <button class="edit-btn btn btn-sm btn-outline-warning btn-block" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+
       {{/if}}
       <!-- End modal button -->
       {{#if (auth-check-delete message.owner)}}
-      {{>delete-button}}
+      <button class="delete-btn btn btn-sm btn-outline-danger btn-block" data-id="{{message._id}}">Delete</button>
+
       {{/if}}
       </div>
     </div>
