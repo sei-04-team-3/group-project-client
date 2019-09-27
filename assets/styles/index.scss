@@ -43,7 +43,7 @@ nav {
 }
 
 .btn-warning {
-  background: #cc9e14;
+  background: #ccad52;
   border-color: #cc9e14;
   color: white;
 }
@@ -80,16 +80,12 @@ nav {
   text-align: right;
 }
 
-.handle-btn {
-  margin: 0 auto;
-}
-
 .btn:hover {
   color: black;
 }
 
 .navShowButton {
-  background: #00b3b3;
+  background: #5cabb8;
 }
 
 .row {
@@ -101,6 +97,10 @@ nav {
 .sign-up {
   background: $message-bg;
   color: white;
+}
+
+.sign-out-danger {
+  background: #db5865;
 }
 
 .status-message {
@@ -125,7 +125,7 @@ nav {
 }
 
 .usernames {
-  background: $message-bg;
+  background: $teal;
   background-color: rgba(50, 131, 117, .75);
   padding: 2px;
 }
