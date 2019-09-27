@@ -63,12 +63,20 @@ const socketGetMessages = function () {
   }
 }
 
+const hideNav = function () {
+  $('.navbar-collapse').collapse('hide')
+}
+
 const addHandlers = () => {
   $('nav').on('submit', '.show-chat', onShowChat)
   $('.main-content').on('submit', '.post-message', onCreateMessage)
   $('.main-content').on('click', '.delete-btn', onDestroyMessage)
   $('.update-message').on('submit', onUpdateMessage)
   $('.main-content').on('click', '.edit-btn', onStoreMessageID)
+
+  $('nav').on('submit', '.show-chat', hideNav)
+  $('nav').on('submit', '.show-change-password', hideNav)
+  $('nav').on('submit', '.sign-out', hideNav)
 
   socket.on('message emit', socketGetMessages)
   socket.on('connection', socketGetMessages)
