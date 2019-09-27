@@ -1,4 +1,5 @@
 {{#each messages as |message|}}
+{{ log message }}
   <div class="row">
     <div class="col-sm-8 col-md-9 col-xl-10">
       <div class="card">
@@ -15,10 +16,15 @@
     </div>
     <div class="col-sm-4 col-md-3 col-xl-2 handle-btn">
       <div class="row sticky-top">
+
       <!-- This is the modal button -->
-        <button class="edit-btn btn btn-sm btn-outline-warning btn-block" data-id="{{message._id}}" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+      {{#if (auth-check-update message.owner)}}
+      {{>update-button}}
+      {{/if}}
       <!-- End modal button -->
-        <button class="delete-btn btn btn-sm btn-outline-danger btn-block" data-id="{{message._id}}">Delete</button>
+      {{#if (auth-check-delete message.owner)}}
+      {{>delete-button}}
+      {{/if}}
       </div>
     </div>
   </div>
