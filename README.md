@@ -136,7 +136,7 @@ Use handlebars and jQuery to dynamically display data
 Postman requests to test early in development
 
 <ul style="list-style-type:none;">
-  <li>get -> #index, #show<li>
+  <li>get -> #index, #show</li>
   <li>post -> #create</li>
   <li>patch -> #update</li>
   <li>delete -> #destroy</li>
