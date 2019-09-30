@@ -5,13 +5,14 @@ const getMessageTemplate = require('./../templates/user-message.handlebars')
 const showUsers = require('./../templates/user-name.handlebars')
 const showMessages = require('./../templates/user-message.handlebars')
 const chatScroller = require('../../../lib/chat-scroller.js')
+const sortMessages = require('../../../lib/sort-messages.js')
 
 const goShowChat = () => {
   $('.main-content').html(showChat())
 }
 
 const onIndexSuccess = (data) => {
-  const showMessages = getMessageTemplate({ messages: data.messages, users: data.users })
+  const showMessages = getMessageTemplate({ messages: data.messages.sort(sortMessages), users: data.users })
   $('.main-content').find('#chatbox').html(showMessages)
 
   chatScroller.checkForScroll()
